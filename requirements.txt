@@ -1,0 +1,5 @@
+# Azure packages
+azure-ai-agents
+azure-identity
+agent-framework --pre
+streamlit

@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+venv/
+env/
+# Python cache files
+__pycache__/
+*.pyc
+#IDE files
+.vscode/
+.idea/
+# Secrets
+.env
+# Output dirs/files
+generated_project/
+logs/
+specs/
+validation_workspace/
+deliverable.zip
+deliverable_fixed.zip
+VALIDATION.md
+
+# Work in progress
+ui/
+main_ui.py
