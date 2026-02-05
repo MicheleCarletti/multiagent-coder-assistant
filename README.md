@@ -32,8 +32,12 @@ coder_project/
 │   │   └── validator_agent.py       # Code validation agent
 │   └── orchestrator/
 │       └── orechestrator.py         # Main orchestrator that coordinates agents
+├── ui/
+│   └── styles.css                   # Styles for web app
+│   └── templates.py                 # Templates for web app
 ├── specs/
 │   └── SPEC.md                      # Auto-generated specifications
+├── main_UI.py                       # Web app entry point
 ├── generated_project/               # Auto-generated project output
 ├── validation_workspace/            # Test execution environment
 ├── logs/                            # Execution logs
@@ -96,9 +100,18 @@ AZURE_AI_MODEL_DEPLOYMENT_NAME = "gpt-4.1" # or the model deployed in your Azure
 
 ## Running the Orchestrator
 
-### Basic Usage
+### From Web App
 
-The main entry point is the orchestrator script. To run the complete workflow:
+The main entry point for the streamlit-powered application.
+
+```powershell
+# From the project root with virtual environment activated
+streamlit run ./main_UI.py
+```
+
+### From CLI
+
+The main entry point from CLI.
 
 ```powershell
 # From the project root with virtual environment activated
