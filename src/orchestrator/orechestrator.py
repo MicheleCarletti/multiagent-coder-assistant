@@ -15,6 +15,7 @@ import shutil
 from typing import Optional
 from agent_framework.azure import AzureOpenAIChatClient
 from azure.identity import AzureCliCredential
+from azure.core.credentials import AzureKeyCredential
 
 from src.agents.requirements_agent import  RequirementsAgent
 from src.agents.coder_agent import CoderAgent
@@ -41,12 +42,14 @@ class Orchestrator:
 
     def __init__(
             self,
+            api_key: Optional[AzureKeyCredential] = None,
             endpoint: Optional[str] = None,
             deployment_name: str = "gpt-4.1",
             credential: Optional[AzureCliCredential] = None
     ):
         """
         Initializes the Orchestrator.
+        :param api_key: The Azure API key (use env variable if None)
         :param endpoint: Azure OpenAI endpoint (use env variable if None)
         :param deployment_name: Model deployment name (default gpt-4.1)
         :param credential: Azure credential (use AzureCliCredential if None)
@@ -57,7 +60,9 @@ class Orchestrator:
                 "Endpoint not specified.Please set AZURE_AI_PROJECT_ENDPOINT environment variable or pass it as a parameter."
             )
         credential = credential or AzureCliCredential()
+        key = api_key or os.environ.get("AZURE_AI_PROJECT_KEY")
         self.client = AzureOpenAIChatClient(
+            api_key=key,
             credential=credential,
             endpoint=endpoint,
             deployment_name=deployment_name

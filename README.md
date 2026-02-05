@@ -83,10 +83,13 @@ Ensure you are authenticated with Azure:
 az login
 ```
 
+If you have an Azure API_KEY you can use it without login required. Ensure to add it as environment variable
+
 You must also set the Azure OpenAI endpoint. You can do this in two ways:
 
 **Option A: Set Environment Variable (Temporary)**
 ```powershell
+$env:AZURE_AI_PROJECT_KEY = "YOUR_API_KEY"
 $env:AZURE_AI_PROJECT_ENDPOINT = "https://<your-resource>.openai.azure.com/"
 $env:AZURE_AI_MODEL_DEPLOYMENT_NAME = "gpt-4.1" # or the model deployed in your Azure
 ```
@@ -94,6 +97,7 @@ $env:AZURE_AI_MODEL_DEPLOYMENT_NAME = "gpt-4.1" # or the model deployed in your 
 **Option B: Create .env File (Recommended)**
 Create a `.env` file in the project root:
 ```
+AZURE_AI_PROJECT_KEY="YOUR_API_KEY"
 AZURE_AI_PROJECT_ENDPOINT=https://<your-resource>.openai.azure.com/
 AZURE_AI_MODEL_DEPLOYMENT_NAME = "gpt-4.1" # or the model deployed in your Azure
 ```
