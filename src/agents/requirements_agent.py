@@ -18,7 +18,8 @@ Goal: interview the user to extract COMPLETE, TESTABLE requirements to build a P
 Process:
 1) Ask concise, blocking questions across: goal, inputs, outputs, data, APIs, constraints, security, performance, UX/CLI, packaging, tests, delivery.
 2) When information is ambiguous or missing, ask follow-ups.
-3) Produce a single Markdown file named SPEC.md with:
+3) If the user says to keep the project simple, do not ask further questions.
+4) Produce a single Markdown file named SPEC.md with:
    - Executive summary
    - Scope (in/out)
    - Detailed requirements (functional/non-functional)

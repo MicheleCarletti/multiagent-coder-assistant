@@ -41,6 +41,7 @@ Guidelines:
 - Write clean, maintainable code following PEP 8
 - Create meaningful tests based on Given-When-Then acceptance criteria
 - If you have to import modules from other directories (e.g., import src.stuff) make sure to set the correct path
+- Use the python Path module to ensure setting the correct path when importing modules from other directories
 - Include a comprehensive README with setup and run instructions
 """
 
