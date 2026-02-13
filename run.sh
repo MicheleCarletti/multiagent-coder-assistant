@@ -7,7 +7,7 @@ echo "Listing:"
 ls -la
 
 # Entrypoint
-TARGET="main_UI.py"
+TARGET="main_ui.py"
 
 if [ ! -f "$TARGET" ]; then
   echo "ERROR: $TARGET not found in folder: $(pwd)"
