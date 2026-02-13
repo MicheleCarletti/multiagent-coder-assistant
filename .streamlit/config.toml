@@ -1,0 +1,11 @@
+# Streamlit configuration for Azure App Services
+[server]
+headless = true
+enableCORS = true
+enableXsrfProtection = true
+port = 8000
+address = "0.0.0.0"
+
+[theme]
+primaryColor = "#0063B1"
+base = "ligh
