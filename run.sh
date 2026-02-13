@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-# Log python version and dependencies
-python --version
-pip freeze
+# Print structure (Debug)
+echo "Working dir: $(pwd)"
+echo "Listing:"
+ls -la
 
-# Run the main application for Azure App Service
-exec python -m streamlit run main_ui.py --server.port 8000 --server.address 0.0.0.0
+# Entrypoint
+TARGET="main_UI.py"
+
+if [ ! -f "$TARGET" ]; then
+  echo "ERROR: $TARGET not found in folder: $(pwd)"
+  exit 1
+fi
+
+exec python -m streamlit run "$TARGET" --server.port 8000 --server.address 0.0.0.0
