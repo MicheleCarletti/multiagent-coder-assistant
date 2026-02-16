@@ -1,5 +1,5 @@
 # Azure packages
 azure-ai-agents
 azure-identity
-agent-framework --pre
-streamlit
+agent-framework == 1.0.0b260123
+streamlit == 1.53.1
